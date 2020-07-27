@@ -1,25 +1,21 @@
 import tkinter
 from tkinter import *
-from PIL import ImageTk, Image
 import random
 
 root = Tk()
 
-def roll():
+def dice():
     number = random.randint(1,6)
-    print(number)
-    return number
-    
-number = roll()
-
-img = ImageTk.PhotoImage(Image.open(f"diceFaces/{number}.png"))
-panel = Label(root, image=img)
-panel.pack(side = "bottom", fill = "both", expand = "yes")
+    img = PhotoImage(file =f"diceFaces/{number}.png")
+    panel = Label(root, image=img)
+    panel.image = img
+    panel.pack(side = "bottom", fill = "both", expand = "yes")
 
 
-roll = Button(root , text = "Roll Dice!", command = roll)
+roll = Button(root , text = "Roll Dice!", command = dice)
 roll.pack()
-
+roll = Button(root , text = "Exit", command = root.destroy)
+roll.pack()
 
 root.mainloop()
 
