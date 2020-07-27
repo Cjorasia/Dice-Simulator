@@ -4,7 +4,6 @@ from PIL import ImageTk, Image
 import os
 
 root = Tk()
-root.geometry('400x400')
 
 def dice():
 
